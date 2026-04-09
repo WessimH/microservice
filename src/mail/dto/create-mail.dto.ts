@@ -1,8 +1,8 @@
 import { IsString, IsEmail, IsOptional, IsNotEmpty } from 'class-validator';
 
 export class CreateMailDto {
-    @IsEmail()
-    @IsNotEmpty()
+    @IsEmail({}, { message: 'L\'email est invalide' })
+    @IsNotEmpty({ message: 'L\'email est obligatoire' })
     email: string;
 
     @IsString()
@@ -10,6 +10,6 @@ export class CreateMailDto {
     subject?: string;
 
     @IsString()
-    @IsOptional()
-    html?: string;
+    @IsNotEmpty({ message: 'Le contenu du mail est obligatoire' })
+    html: string;
 }
