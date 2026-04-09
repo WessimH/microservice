@@ -88,3 +88,28 @@ client.emit('send_mail', {
   html: '<h1>Hello World</h1>'
 });
 ```
+
+## CI/CD (Jenkins)
+This project includes a Jenkinsfile for automated integration. The pipeline ensures code quality and build stability.
+
+- Prerequisites for Jenkins
+To ensure the pipeline runs correctly, the following must be configured:
+
+1. NodeJS Plugin: The Jenkins instance must have the NodeJS plugin installed.
+
+2. Global Tool Configuration: A NodeJS installation named NodeJS 25 must be defined.
+
+3. Credentials: A "Secret text" credential with the ID RESEND_API_KEY_SECRET must be created to store the Resend API key securely.
+
+- Pipeline Stages
+The automated pipeline executes the following steps:
+
+1. Récupération du code: Retrieves the source from the SCM.
+
+2. Installation des dépendances: Executes npm install.
+
+3. Tests Unitaires & Validation: Runs unit tests using npm run test.
+
+4. Tests E2E: Executes end-to-end tests using npm run test:e2e.
+
+5. Build: Compiles the project using npm run build.
