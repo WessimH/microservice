@@ -1,7 +1,6 @@
 # Microservice Notification
 
-A specialized NestJS Microservice for handling notifications (Email and SMS) via TCP.
-
+BDE Manager est un systeme de gestion d'evenement avec une fonctionnalitée de notification par mail 
 ## Description
 
 This service is key component of the system architecture, responsible for:
